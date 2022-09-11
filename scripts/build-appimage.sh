@@ -4,7 +4,7 @@ set -xe
 
 mkdir appimage
 
-pip3 install --user protobuf
+pip3 install --user protobuf==3.19.4 # need support for python 3.6 for running on bionic
 scripts/fetch-protoc.sh appimage
 export PATH="`pwd`/appimage/protoc/bin:$PATH"
 scripts/build-ffmpeg.sh appimage
